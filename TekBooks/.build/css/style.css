@@ -1,0 +1,16 @@
+.jumbotron {
+	margin-top: 20px;
+}
+
+.header {
+	margin-top: 60px;
+}
+
+body > div > div.jumbotron > div > div > div > div > div.col-md-8 > h2{
+    padding: 0;
+    margin: 0;
+}
+
+img{
+    width: 100%;
+}

@@ -1,0 +1,17 @@
+{>"layouts/master" /}
+
+{<body}
+<div class="row">
+    {#books}
+            <div class="col-md-3">
+                <img src="/img/{.cover}">
+                <h4>{.title}</h4>
+                <p>{.truncText}</p>
+                <div class="price">Buy it for <span>{.price}</span></div>
+                <br>
+                <a href="/books/details/{._id}">Book Details</a>
+            </div>
+    {/books}
+</div>
+
+{/body}
