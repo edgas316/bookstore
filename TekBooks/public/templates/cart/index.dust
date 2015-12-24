@@ -1,0 +1,66 @@
+{>"layouts/manage" /}
+
+{<title}
+    Your Cart
+{/title}
+
+{<body}
+<h2>Your Shoping Cart <span><a class="btn btn-danger" href="/cart/remove">Empty Cart</a></span></h2>
+{?cart.items}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Quontity</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {#cart.items}
+        <tr>
+            <td><a href="books/details/{._id}">{.title}</a></td>
+            <td>{.qty}</td>
+            <td>${@math key="{.price}" method="multiply" operand="{.qty}" /}</td>
+            <td></td>
+        </tr>
+        {/cart.items}
+    </tbody>
+</table>
+<div class="row">
+      				<div class="col-md-6">
+						<h4>Total: <strong>${cart.total}</strong></h4>
+					</div>
+					<div class="col-md-6">
+						<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+				            	<!-- Specifies Buy Now Button -->
+				                <input type="hidden" name="cmd" value="_xclick">
+				                <!-- PayPal Email -->
+				                <input type="hidden" name="business" value="edgas316@gmail.com">
+				                <!-- Item Name -->
+				                <input type="hidden" name="item_name" value="TekBooks Books">
+				                <!-- Item ID -->
+				                <input type="hidden" name="item_number" value="1">
+				                <!-- Currency Code -->
+				                <input type="hidden" name="currency_code" value="USD">
+				                <!-- Price -->
+				                <input type="hidden" name="amount" value="{cart.total}">
+				                <!-- Specify Shipping -->
+				                <input type='hidden' name='no_shipping' value='1'>
+				                <!-- Return method -->
+				                <input type='hidden' name='rm' value='2'>
+				                <!-- Return URL -->
+				                <input type="hidden" name="return" value="http://localhost:3000">
+				                <!-- Cancel Return URL -->
+				                <input type="hidden" name="cancel_return" value="http://localhost:3000">
+				             			           
+				                <!-- Button -->
+				                <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_107x26.png" name="submit" alt="Buy Now">
+				            </form> 
+					</div>
+				</div>
+
+{:else}
+    <p>There are no items in your cart</p>
+{/cart.items}
+{/body}

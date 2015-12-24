@@ -1,0 +1,14 @@
+{>"layouts/manage" /}
+{<title}
+    About TeckBook
+{/title}
+{<body}
+<div class="row">
+    <div class="col-md-12">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo sem arcu, non dictum arcu suscipit in. Sed vitae nunc feugiat, sagittis magna sed, euismod mi. Duis ut ligula mattis, condimentum eros vitae, dapibus enim. In sit amet aliquam turpis, sed fringilla ante. Vivamus pellentesque, sem sed volutpat rhoncus, felis nibh finibus odio, eu sagittis turpis libero at nulla. Cras fringilla porttitor congue. Ut lobortis consectetur lacus. Mauris consequat hendrerit diam a cursus. Morbi ac dolor posuere mi vestibulum pretium sed eu felis. </p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer ut tempus lacus, ut placerat ante. Pellentesque condimentum cursus orci, quis fringilla turpis volutpat eleifend. Quisque placerat et purus nec tristique. Proin feugiat sapien non massa congue, sagittis sagittis nibh rutrum. Integer facilisis, nunc ut eleifend condimentum, nisi velit aliquam ante, id tincidunt risus sapien ultrices tortor. Suspendisse consequat in ligula ut ultrices. Maecenas volutpat nisl id efficitur consequat. Donec vel tristique dolor. Integer vitae dignissim mi, ac efficitur metus. Vivamus in urna consequat risus vulputate convallis non sed massa. Curabitur non massa leo. Mauris nec odio leo.</p>
+        <p>Sed mattis ex nec nulla convallis placerat eget ac augue. Aliquam dignissim odio sit amet arcu volutpat semper. Aenean imperdiet molestie sapien non vehicula. Proin ante turpis, commodo at arcu non, facilisis tristique risus. Suspendisse tristique mi ut libero maximus, nec hendrerit nisl venenatis. Quisque sagittis enim et venenatis malesuada. Praesent convallis turpis quis ultricies venenatis. Integer a risus tincidunt, dictum ligula et, laoreet ex. Quisque maximus quam et neque congue, quis imperdiet est ultrices. Donec diam quam, porta a tristique eu, malesuada sed nulla. Nullam vel massa mollis dolor laoreet tristique. In facilisis eu turpis id ullamcorper.</p>
+    </div>
+</div>    
+{/body}

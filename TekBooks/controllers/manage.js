@@ -158,20 +158,97 @@ module.exports = function (router) {
             req.flash('error', "Please fill out required fields");
             res.location('/manage/categories/add');
             res.redirect('/manage/categories/add');
+        }else{
+            newCategory.save(function(err) {
+                if(err) {
+                    console.log('save error', err);
+                }
+                req.flash('success', "Category Added");
+                res.location('/manage/categories');
+                res.redirect('/manage/categories');
+            });
         }
-
-        
-
-        newCategory.save(function(err) {
-            if(err) {
-                console.log('save error', err);
-            }
-
-            req.flash('success', "Category Added");
-            res.location('/manage/categories');
-            res.redirect('/manage/categories');
-        });
-
     });
+    
+    // Display category edit form
+    router.get('/categories/edit/:id', function(req,res){
+        Category.findOne({_id:req.params.id}, function(err, category){
+            if(err){
+                console.log(err)
+            }
+            var model = {
+                category:category
+            }
+            res.render('manage/categories/edit', model)
+        })
+    })
+    
+    // Edit category
+    router.post('/categories/edit/:id', function(req,res){
+        var name = req.body.name && req.body.name.trim()
+        
+        Category.update({_id:req.params.id}, {
+            name:name
+        }, function(err){
+            if(err){
+                console.log('update error', err)
+            }
+            req.flash('success', "Category Updated")
+            res.location('/manage/categories')
+            res.redirect('/manage/categories')
+        })
+    })
+    
+    // Delete category route
+    router.delete('/categories/delete/:id', function(req,res){
+        Category.remove({_id:req.params.id}, function(err){
+            if(err){
+                console.log(err)
+            }
+            req.flash('success', 'Category Deleted')
+            res.location('/manage/categories')
+            res.redirect('/manage/categories')
+        })
+    })
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

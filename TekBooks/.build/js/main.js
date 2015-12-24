@@ -22,6 +22,7 @@ $(document).ready(function(){
 		});
 		window.location = '/manage/categories';
 	});
-
+    
+    
 
 });
